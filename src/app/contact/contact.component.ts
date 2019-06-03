@@ -7,7 +7,14 @@ import { from } from 'rxjs';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-
+  text = 'contact page';
+  contactForm: FormGroup;
+  contact = {
+    name: '',
+    email: '',
+    text: ''
+  };
+  submitted = false;
   constructor() {
     this.createForm();
    }
@@ -15,16 +22,17 @@ export class ContactComponent implements OnInit {
   ngOnInit() {
   }
 
-
-
-
+  /**
+   * Creates form
+   * this function no need to test, because it will be excuted in constructor
+   */
   createForm(): void {
     this.contactForm = new FormGroup({
-      name: new FormControl(this.contact.name,[
+      name: new FormControl(this.contact.name, [
         Validators.required,
         Validators.minLength(4)
       ]),
-      email: new FormControl(this.contact.email,[
+      email: new FormControl(this.contact.email, [
         Validators.required,
         Validators.email
       ]),
@@ -36,13 +44,6 @@ export class ContactComponent implements OnInit {
     this.submitted = true;
   }
 
-  text = 'Contacy page';
-  contactForm: FormGroup;
-  contact = {
-    name: '',
-    email: '',
-    text: ''
-  };
-  submitted = false;
+
 
 }

@@ -1,11 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { DebugElement } from '@angular/core'
+import { DebugElement } from '@angular/core';
 import { ContactComponent } from './contact.component';
 
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, FormGroup } from '@angular/forms';
 import { from } from 'rxjs';
-import { BrowserModule } from '@angular/platform-browser';
-import { By } from 'protractor';
+import { BrowserModule, By } from '@angular/platform-browser';
 import { getQueryPredicate } from '@angular/compiler/src/render3/view/util';
 describe('ContactComponent', () => {
   let comp: ContactComponent;
